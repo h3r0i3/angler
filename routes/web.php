@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+// wpisu do rountingu
+Route::get('/', 'SitesController@index'); //na adres /sites wywoływana jest funkcja index z kontrolera SitesController
+Route::get('/dodaj', 'SitesController@dodaj');
+Route::post('/zapisz', [            // Zasób "zapis" będzie możliwy do uruchowmienia gdy będzie wywołany metodą POST.
+    'uses' => 'SitesController@zapisz',
+    'as' => 'sites.zapisz'  //skrócona nazwa routingu
+]); 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
