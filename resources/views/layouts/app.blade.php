@@ -26,7 +26,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="/dodaj">Dodaj <span class="sr-only">(current)</span></a>
             </li>
@@ -43,6 +43,15 @@
               <a class="nav-link disabled" href="lowiska">Szukaj łowisk</a>
             </li>
           </ul>
+
+          <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/zaloguj">Zaloguj <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/rejestracja">Zarejestuj</a>
+              </li>
+            </ul>
         </div>
       </nav>
 

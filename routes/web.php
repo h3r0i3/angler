@@ -23,6 +23,8 @@ Route::get('/ranking', 'SitesController@ranking');
 Route::get('/atlas', 'SitesController@atlas');
 Route::get('/ochrona', 'SitesController@ochrona');
 Route::get('/lowiska', 'SitesController@lowiska');
+Route::get('/rejestracja', 'SitesController@rejestracja');
+Route::get('/zaloguj', 'SitesController@zaloguj');
 Route::post('/zapisz', [            // Zasób "zapis" będzie możliwy do uruchowmienia gdy będzie wywołany metodą POST.
     'uses' => 'SitesController@zapisz',
     'as' => 'sites.zapisz'  //skrócona nazwa routingu

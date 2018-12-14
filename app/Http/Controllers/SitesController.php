@@ -30,4 +30,12 @@ class SitesController extends Controller
         return view('sites.lowiska');
     }
 
+    public function zaloguj(){
+        return view('sites.zaloguj');
+    }
+
+    public function rejestracja(){
+        return view('sites.rejestracja');
+    }
+
 }
