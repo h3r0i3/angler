@@ -19,11 +19,12 @@
         <button class="btn btn-primary"> Zapisz </button>
     </div>
 
-</form>
+</form><br/>
 @endsection
-@section('content') <!-- użycie tego pozwala na wstrzyknięcie wszystkiego co 
+@section('body2') <!-- użycie tego pozwala na wstrzyknięcie wszystkiego co 
 znajduje się w sekcji w miejsce "yield('content')" w pliku app w katalogu layouts. -->
-Łukasz    
+Użytkownij będzie mógł dodać do BD swoją zdobycz 
+(nazwę ryby, jej wielkość, dzień i godzinę złowienia, miejsce połowu, dane o pogodzie i jakąś notatkę)  
 @endsection
 
 
