@@ -58,6 +58,7 @@
         <main class="py-4">
 
             <div class="container">
+                @include('inc.messages')
                 @yield('body') <!-- w tym miejscu pojawiają się dane zawarte w sekcjach o nazwie "@section('content') -->
                 @yield('body2')
               </div>   

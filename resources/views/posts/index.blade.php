@@ -2,7 +2,7 @@
 
 @section('body');
     <h2> Ranking dwóch najdłuższych ryb złowionych przez naszych użytkowników: </h2><br><br>
-    @if(count($posts)>1)
+    @if(count($posts)>0)
         @foreach($posts as $post)
             <div class="well">
                 <h3>{{$post->nazwa}}</h3> <h5>{{$post->dlugosc}}, {{$post->waga}}, {{$post->info}}</h5> 

@@ -32,3 +32,7 @@ Route::post('/zapisz', [            // Zasób "zapis" będzie możliwy do urucho
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::resource('posts', 'PostsController');
