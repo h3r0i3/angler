@@ -1,30 +1,26 @@
-@extends('layouts.app') <!-- dodajemu tutaj korzystanie z pliku layout z katalogu app (w zasadzie z layoutu :D) -->
+@extends('layouts.app')
 
-
-
-@section('title', 'Dodawanie strony')  
 @section('body')
+    <h2> Dodaj nowy okaz: </h2><br><br>
+    {!! Form::open(['action' => 'PostsController@store', 'method'=>'POST'] ) !!}
+        <div class="form-group">
+            {{Form::label('nazwa', 'Nazwa:')}}
+            {{Form::text('nazwa', '', ['class' => 'form-control', 'placeholder'=> 'Nazwa ryby'])}}
+        </div>
 
-<form action="{{route('sites.zapisz')}}" method="post"> <!-- formularz wysyłany za pomocą metody POST -->
-    
-    <div class="form-group">
-        <input type="text" name="title" class="form-control" placeholder="Podaj nazwę okazu">
-    </div>
-    
-    <div class="form-group">
-        <textarea name="uwagi" class="form-control" placeholder="Napisz proszę coś więcej"></textarea>
-    </div>
+        <div class="form-group">
+            {{Form::label('dlugosc', 'Długość:')}}
+            {{Form::text('dlugosc', '', ['class' => 'form-control', 'placeholder'=> 'Długość ryby w centymetrach'])}}
+        </div>
 
-    <div class="form-group">
-        <button class="btn btn-primary"> Zapisz </button>
-    </div>
-
-</form><br/>
+        <div class="form-group">
+            {{Form::label('waga', 'Waga:')}}
+            {{Form::text('waga', '', ['class' => 'form-control', 'placeholder'=> 'Waga ryby w kilogramach'])}}
+        </div>
+        <div class="form-group">
+                {{Form::label('info', 'Dodatkowe informacje:')}}
+                {{Form::textarea('info', '', ['class' => 'form-control', 'placeholder'=> 'Wpisz tutaj dodatkowe informacje, jak na przykład pora dnia połowu, warunki atmosferyczne itp.'])}}
+            </div>
+            {{Form::submit('Dodaj', ['class'=>'btn btn-primary'])}}
+    {!! Form::close() !!}
 @endsection
-@section('body2') <!-- użycie tego pozwala na wstrzyknięcie wszystkiego co 
-znajduje się w sekcji w miejsce "yield('content')" w pliku app w katalogu layouts. -->
-Użytkownij będzie mógł dodać do BD swoją zdobycz 
-(nazwę ryby, jej wielkość, dzień i godzinę złowienia, miejsce połowu, dane o pogodzie i jakąś notatkę)  
-@endsection
-
-
