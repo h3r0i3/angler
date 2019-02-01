@@ -3,7 +3,7 @@
 
 
 <!-- @section('title', 'Strona główna')  -->
-@section('body') <!-- użycie tego pozwala na wstrzyknięcie wszystkiego co 
+@section('content') <!-- użycie tego pozwala na wstrzyknięcie wszystkiego co 
 znajduje się w sekcji w miejsce "yield('content')" w pliku app w katalogu layouts. -->
 <h1>Główne założenia:</h1> 
 - wykorzystane technologii PHP, HTML, CSS, MySQL, Google Maps.<br/>

@@ -1,24 +1,20 @@
 @extends('layouts.app')
 
-@section('body')
-<h4>Aby wyświetli informacje związane z interesującą rybą, 
-wybierz nazwę gatunku z rozwijanej listy znajdującej się poniżej:</h4>
-<br>
-<form action="...">
-	<div class="input-group mb-3">
-		<div class="input-group-prepend">
-		  <label class="input-group-text" for="inputGroupSelect01">Wybierz nazwę ryby: </label>
-		</div>
-		<select class="custom-select" id="inputGroupSelect01">
-		  <option selected>Wybierz...</option>
-		  <option value="1">Rybka z BD 1</option>
-		  <option value="2">Rybka z BD 2</option>
-		  <option value="3">Rybka z BD 3</option>
-		</select>
-	  </div>
-
-	<div class="form-group">
-        <button class="btn btn-primary"> Szukaj </button>
-    </div>
-</form>
+@section('content')
+W tym miejscu będzie znajdował się atlas ryb wraz ze zdjęciami, opisem itp. 
+Po wybraniu gatunku ryby, użytkownik zostanie przeniesiony do obszerniejszego widoku, 
+w którym znajdować się będą informacje zdefiniowane wcześniej w bazie danych: <br>
+- zdjęcie,<br>- informacje na temat gatunku,<br>- okres ochronny wraz z wymiarami ochronnymi.
+<br><br><h3>Atlas ryb</h3><br>
+<div class="input-group mb-3">
+	<select class="custom-select" id="inputGroupSelect02">
+	  <option selected>Wybierz gatunek ryby:</option>
+	  <option value="1">Nazwa ryby z bazy danych 1 </option>
+	  <option value="2">Nazwa ryby z bazy danych 2 </option>
+	  <option value="3">Nazwa ryby z bazy danych 3 </option>
+	</select>
+	<div class="input-group-append">
+		<button class="btn btn-primary" type="button">Szukaj</button>
+	</div>
+  </div>
 @endsection

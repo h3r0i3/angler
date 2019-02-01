@@ -17,7 +17,7 @@ class PostsController extends Controller
     {
        // $posts = Post::orderBy('waga', 'desc')->get();
         $posts = DB::select('SELECT * FROM posts ORDER BY dlugosc DESC LIMIT 5');
-        return view ('sites.ranking')->with('posts', $posts);;
+        return view ('sites.ranking')->with('posts', $posts);
    
     }
 

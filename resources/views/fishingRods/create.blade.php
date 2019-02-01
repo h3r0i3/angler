@@ -1,0 +1,17 @@
+@extends('layouts.app')
+
+@section('content')
+    <h2> Dodaj nową wędkę: </h2><br><br>
+    {!! Form::open(['action' => 'FishingRodController@store', 'method'=>'POST'] ) !!}
+        <div class="form-group">
+            {{Form::label('model', 'Model:')}}
+            {{Form::text('model', '', ['class' => 'form-control', 'placeholder'=> 'Model wędki'])}}
+        </div>
+        <div class = "form-group"> 
+            {{Form::label('type', 'Typ wędki:')}}       
+            {{Form::select('type', $fishing_rods_types, '', ['class' => 'form-control'])}}
+        </div>
+
+        {{Form::submit('Dodaj', ['class'=>'btn btn-primary'])}}
+    {!! Form::close() !!}
+@endsection

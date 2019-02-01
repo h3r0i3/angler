@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('body')
+@section('content')
     <h2> Dodaj nowy okaz: </h2><br><br>
     {!! Form::open(['action' => 'PostsController@store', 'method'=>'POST'] ) !!}
         <div class="form-group">

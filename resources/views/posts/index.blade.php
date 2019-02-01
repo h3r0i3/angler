@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('body');
+@section('content');
     <h2> Ranking pięciu najdłuższych ryb złowionych przez naszych użytkowników: </h2><br><br>
     @if(count($posts)>0)
         @foreach($posts as $post)

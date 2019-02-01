@@ -26,32 +26,60 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/dodaj">Dodaj <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/ranking">Ranking</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="atlas">Atlas ryb</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ochrona">Okres ochronny</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="lowiska">Szukaj łowisk</a>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="/zaloguj">Zaloguj <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/rejestracja">Zarejestuj</a>
-              </li>
+            <ul class="navbar-nav mr-auto">
+                
+                <li class="nav-item active">
+                <a class="nav-link" href="/ranking">Ranking</a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link" href="/atlas">Atlas ryb</a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link" href="/lowiska">Szukaj łowisk</a>
+                </li>
+                @if (!Auth::guest())       
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/dodaj">Dodaj</a>
+                </li>         
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/wedki">Wędki</a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/kolowrotki">Kołowrotki</a>
+                </li>               
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/zylki">Żyłki</a>
+                </li>               
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/haczyki">Haczyki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/przypony">Przypony</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/zestawy">Zestawy</a>
+                </li>
+                @endif
             </ul>
+
+            <ul class="navbar-nav">
+              <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li class="nav-item active"><a class= "nav-link" href="{{ url('/login') }}">Logowanie</a></li>
+                    <li class="nav-item active"><a class= "nav-link" href="{{ url('/register') }}">Rejestracja</a></li>
+                @else
+                    <li class="nav-item"><span class="nav-link">Witaj: {{ Auth::user()->name }}</span></li>
+                    <li class="nav-item">                    
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                            Wyloguj
+                        </a>    
+                    </li>
+                    <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                @endif
+            </ul>
+
         </div>
       </nav>
 
@@ -59,8 +87,7 @@
 
             <div class="container">
                 @include('inc.messages')
-                @yield('body') <!-- w tym miejscu pojawiają się dane zawarte w sekcjach o nazwie "@section('content') -->
-                @yield('body2')
+                @yield('content') <!-- w tym miejscu pojawiają się dane zawarte w sekcjach o nazwie "@section('content') -->
               </div>   
         </main>
     </div>
