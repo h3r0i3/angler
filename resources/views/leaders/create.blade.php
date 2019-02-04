@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<h4><b></b></h4>
+<h4><b>Dodać możliwość wyboru przyponu ze względu na charakter łowionej ryby - (drapieżna lub ??zwykłe??)</b></h4>
     <h2> Dodaj przypon: </h2><br><br>
     {!! Form::open(['action' => 'LeadersController@store', 'method'=>'POST'] ) !!}
         <div class="form-group">

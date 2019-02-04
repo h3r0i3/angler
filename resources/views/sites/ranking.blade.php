@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<h2><b>Tutaj ma jeszcze znajdować się informacja, jaki użytkownik dodał informację na temat złowionej ryby + zdjęcie dodane przez użytkownika złowionego okazu.</h2></b><br>
     <h2> Ranking pięciu najdłuższych ryb złowionych przez naszych użytkowników: </h2><br><br>
     @if(count($posts)>0)
         @foreach($posts as $post)

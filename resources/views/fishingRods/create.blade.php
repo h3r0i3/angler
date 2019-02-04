@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+<h4><b>Dodanie informacji na temat długości wędki.</b></h4>
     <h2> Dodaj nową wędkę: </h2><br><br>
     {!! Form::open(['action' => 'FishingRodController@store', 'method'=>'POST'] ) !!}
         <div class="form-group">
