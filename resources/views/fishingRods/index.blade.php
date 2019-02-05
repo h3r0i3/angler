@@ -10,6 +10,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">model wędki</th>
+                    <th scope="col">długość wędki</th>
                     <th scope="col">data dodania</th>
                     <th scope="col"></th>
                 </tr>
@@ -19,6 +20,7 @@
                 <tr>
                     <td scope="row">1</th>
                     <td>{{$fishing_rod->model}}</td>
+                    <td>{{$fishing_rod->length}}</td>
                     <td>{{$fishing_rod->created_at}}</td>
                     <td>
                     <a href="/wedki/{{$fishing_rod->id}}/edit" class="btn btn-primary">edytuj</a> 

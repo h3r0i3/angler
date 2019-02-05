@@ -12,23 +12,59 @@
     <h2> Dodaj nowy okaz: </h2><br><br>
     {!! Form::open(['action' => 'PostsController@store', 'method'=>'POST'] ) !!}
         <div class="form-group">
-            {{Form::label('nazwa', 'Nazwa:')}}
-            {{Form::text('nazwa', '', ['class' => 'form-control', 'placeholder'=> 'Nazwa ryby'])}}
+            {{Form::label('fish_name', 'Nazwa:')}}
+            <select class="form-control">
+                    <option>--Wybierz nazwę ryby--</option>
+                    <option>Nazwa ryby z BD 1</option>
+                    <option>Nazwa ryby z BD 2</option>
+            </select>
+        </div>
+        <div>   
+        <div class="form-group" id="fishery">
+                {{Form::label('fishery', 'Łowisko:')}}
+                <select class="form-control">
+                    <option>--Wybierz łowisko--</option>
+                    <option>Łowisko z BD 1</option>
+                    <option>Łowisko z BD 2</option>
+                </select>
         </div>
 
         <div class="form-group">
-            {{Form::label('dlugosc', 'Długość:')}}
-            {{Form::number('dlugosc', '', ['class' => 'form-control', 'placeholder'=> 'Długość ryby w centymetrach'])}}
+            {{Form::label('fish_length', 'Długość:')}}
+            {{Form::number('fish_length', '', ['class' => 'form-control', 'placeholder'=> 'Długość ryby w centymetrach'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('waga', 'Waga:')}}
-            {{Form::number('waga', '', ['class' => 'form-control', 'placeholder'=> 'Waga ryby w kilogramach'])}}
+            {{Form::label('fish_weight', 'Waga:')}}
+            {{Form::number('fish_weight', '', ['class' => 'form-control', 'placeholder'=> 'Waga ryby w kilogramach'])}}
+        </div>
+        <div class="form-group" id = "time_of_day">
+                {{Form::label('time_of_day', 'Pora dnia:')}}
+                <select class="form-control">
+                    <option>--Wybierz porę dnia połowu--</option>
+                    <option>Brzask</option>
+                    <option>Ranek</option>
+                    <option>Południe</option>
+                    <option>Popołodnie</option>
+                    <option>Wieczór</option>
+                    <option>Zmierzch</option>
+                    <option>Północ</option>
+                </select>
+        </div>
+        <div class="form-group" id="sets">
+                {{Form::label('sets', 'Użyty zestaw:')}}
+                <select class="form-control">
+                    <option>** Domyślny zestaw**</option>
+                    <option>Dodatkowy zestaw użytkownika z BD 1</option>
+                    <option>Dodatkowy zestaw użytkownika z BD 2</option>
+                </select>
         </div>
         <div class="form-group">
-                {{Form::label('info', 'Dodatkowe informacje:')}}
-                {{Form::textarea('info', '', ['class' => 'form-control', 'placeholder'=> 'Wpisz tutaj dodatkowe informacje, jak na przykład pora dnia połowu, warunki atmosferyczne itp.'])}}
-            </div>
-            {{Form::submit('Dodaj', ['class'=>'btn btn-primary'])}}
+                <label for="file">Dodaj zdjęcie złowionego okazu</label>
+                <input type="file" class="form-control-file" id="file">
+        </div><br>
+
+
+    {{Form::submit('Dodaj', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
 @endsection

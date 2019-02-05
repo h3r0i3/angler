@@ -7,6 +7,12 @@
             {{Form::label('model', 'Model:')}}
             {{Form::text('model', $fishing_rod->model, ['class' => 'form-control', 'placeholder'=> 'Model wędki'])}}
         </div>
+        
+        <div class="form-group">
+            {{Form::label('length', 'Długość wędki:')}}
+            {{Form::number('length', $fishing_rod->length, ['class' => 'form-control', 'placeholder'=> 'Długość wędki w centymetrach'])}}
+        </div>
+
         <div class = "form-group"> 
             {{Form::label('type', 'Typ wędki:')}}       
             {{Form::select('type', $fishing_rods_types, $fishing_rod->type_id, ['class' => 'form-control'])}}

@@ -16,7 +16,7 @@ class PostsController extends Controller
     public function index()
     {
        // $posts = Post::orderBy('waga', 'desc')->get();
-        $posts = DB::select('SELECT * FROM posts ORDER BY dlugosc DESC LIMIT 5');
+        $posts = DB::select('SELECT * FROM posts ORDER BY fish_length DESC LIMIT 5');
         return view ('sites.ranking')->with('posts', $posts);
    
     }
@@ -40,18 +40,24 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nazwa' => 'required', 
-            'dlugosc' => 'required',
-            'waga' => 'required', 
-            'info' => 'required',
+            'fish_name' => 'required', 
+            'fishery' => 'required',
+            'fish_length' => 'required',
+            'fish_weight' => 'required',
+            'time_of_day' => 'required', 
+            'sets' => 'required',  
+            
         ]);
             
         // stworz post
         $post = new Post;
-        $post->nazwa = $request->input('nazwa');
-        $post->dlugosc = $request->input('dlugosc');
-        $post->waga = $request->input('waga');
-        $post->info = $request->input('info');
+        $post->fish_name = $request->input('fish_name');
+        $post->fishery = $request->input('fishery');
+        $post->fish_length = $request->input('fish_length');
+        $post->fish_weight = $request->input('fish_weight');
+        $post->time_of_day = $request->input('time_of_day');
+        $post->sets = $request->input('sets');
+        $post->image = $request->input('image');
         $post->save();
 
         return redirect ('/')->with('success', 'Post utworzony');

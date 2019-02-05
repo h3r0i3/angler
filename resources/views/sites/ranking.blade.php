@@ -6,8 +6,10 @@
     @if(count($posts)>0)
         @foreach($posts as $post)
             <div class="well">
-                <h3>{{$post->nazwa}}</h3> <h5>Długość w cm: <b>{{$post->dlugosc}}</b>, Waga w kg: <b>{{$post->waga}}</b>, {{$post->info}}</h5> 
-                <small>{{$post->created_at}}</small> <br><br>
+                <h3>{{$post->fish_name}}</h3> <h5>Długość w cm: <b>{{$post->fish_length}}</b>, 
+                    Waga w kg: <b>{{$post->fish_weight}}</b>, Pora połowu: <b>{{$post->time_of_day}}</b>,
+                    Na łowisku: <b>{{$post->fishery}}</b></h5> 
+                <small>Okaz złowiony przez: <b>{{$post->nick}}</b>, dodano: {{$post->created_at}}</small> <br><br>
             </div>
         @endforeach 
     @else

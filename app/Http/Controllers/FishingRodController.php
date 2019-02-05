@@ -64,12 +64,14 @@ class FishingRodController extends Controller
     {
         $this->validate($request, [
             'type' => 'required', 
+            'length' => 'required',
             'model' => 'required',
         ]);            
 
         $fishingRod = new FishingRod;
         $fishingRod->user_id = Auth::user()->id;
         $fishingRod->model = $request->input('model');
+        $fishingRod->length = $request->input('length');
         $fishingRod->type_id = $request->input('type');
         $fishingRod->save();
 
@@ -119,11 +121,13 @@ class FishingRodController extends Controller
     {
         $this->validate($request, [
             'type' => 'required', 
+            'length' => 'required', 
             'model' => 'required',
         ]);            
 
         $fishing_rod = FishingRod::find($id);
         $fishing_rod->model = $request->input('model');
+        $fishing_rod->length = $request->input('length');
         $fishing_rod->type_id = $request->input('type');
         $fishing_rod->save();
 
