@@ -18,6 +18,7 @@ class CreateFishingRodsTable extends Migration
             $table->integer('type_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('model');
+            $table->string('length');
             $table->timestamps();
             
         });

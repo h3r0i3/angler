@@ -14,7 +14,7 @@ class FishingRodTypesTableSeeder extends Seeder
     {
         DB::table('fishing_rod_types')->insert([[
             'type' => "spławikówka",
-            'desc' => 'do łowienia na spławik',
+            'desc' => 'Służy do łowienia na spławik',
             'created_at' => date('Y-m-d H:i:s'),
         ],
         [

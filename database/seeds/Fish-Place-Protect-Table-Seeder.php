@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class FishingRodTypesTableSeeder extends Seeder
+class FishPlaceProtectTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class FishingRodTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('fish')->insert([[
+        DB::table('fishs')->insert([[
             'name' => "amur",
             'photo_link' => 'amur.jpg',
             'info' => 'dodatkowe info',
@@ -175,7 +175,7 @@ class FishingRodTypesTableSeeder extends Seeder
         ]]);
 
 
-        DB::table('place')->insert([[
+        /*DB::table('place')->insert([[
             'area' => "Wisła powyżej zapory",
             'info' => 'Okres ochronny obejmujący rybę występującą powyżej zapory we Włocławku, to jest od źródła do zapory.',
         ],
@@ -212,6 +212,6 @@ class FishingRodTypesTableSeeder extends Seeder
             'date_from' => date('Y-m-d H:i:s'),
             'date_to' => date('Y-m-d H:i:s'),
             'info' => "info"
-        ]]);
+        ]]);*/
     }
 }
