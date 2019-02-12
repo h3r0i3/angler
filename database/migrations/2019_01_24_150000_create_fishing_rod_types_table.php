@@ -16,7 +16,7 @@ class CreateFishingRodTypesTable extends Migration
         Schema::create('fishing_rod_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
-            $table->string('desc');
+            $table->text('desc');
             $table->timestamps();
         });
     }

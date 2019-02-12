@@ -15,7 +15,7 @@ class CreateAtlasTable extends Migration
     {
         Schema::create('fishs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nazwa');
+            $table->string('name');
             $table->string('photo_link');
             $table->text('info');
             $table->timestamps();
@@ -51,7 +51,7 @@ class CreateAtlasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fish');
+        Schema::dropIfExists('fishs');
         Schema::dropIfExists('place');
         Schema::dropIfExists('protect');
     }
