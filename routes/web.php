@@ -20,7 +20,7 @@
 Route::get('/', 'SitesController@index'); //na adres /sites wywoływana jest funkcja index z kontrolera SitesController
 Route::get('/dodaj', 'SitesController@dodaj');
 Route::get('/ranking', 'SitesController@ranking');
-Route::get('/atlas', 'SitesController@atlas');
+Route::get('/atlas', 'AtlasController@create');
 Route::get('/ochrona', 'SitesController@ochrona');
 Route::get('/lowiska', 'SitesController@lowiska');
 Route::post('/zapisz', [            // Zasób "zapis" będzie możliwy do uruchowmienia gdy będzie wywołany metodą POST.
@@ -39,5 +39,6 @@ Route::resources([
     'zylki' => 'LinesController',
     'haczyki' => 'HooksController',
     'przypony' => 'LeadersController',
-    'zestawy' => 'SetsController'
+    'zestawy' => 'SetsController',
+    'atlas' => 'AtlasController'
 ]);
