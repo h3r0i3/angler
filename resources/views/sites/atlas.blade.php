@@ -10,9 +10,9 @@ w którym znajdować się będą informacje zdefiniowane wcześniej w bazie dany
     {!! Form::open(['action' => 'AtlasController@store', 'method'=>'POST'] ) !!}
 
         <div class = "form-group"> 
-            {{Form::label('type', 'Typ wędki:')}}       
-            {{Form::select('type', $fishing_rods_types, '', ['class' => 'form-control'])}}
+            {{Form::label('type', 'Wybierz rybę:')}}       
+            {{Form::select('type', $fishs, '', ['class' => 'form-control'])}}
         </div>
-        {{Form::submit('Dodaj', ['class'=>'btn btn-primary'])}}
+        {{Form::submit('Szukaj', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
 @endsection

@@ -30,8 +30,12 @@ class AtlasController extends Controller
     {
         if (Auth::check())
         {
-            //$fishing_rods = User::find(Auth::user()->id)->fishingRods;
-            return view ('sites.atlas')->with('fishing_rods', $fishing_rods);
+        $fishs = Fish::all();
+        $fish_name = array();
+        foreach ($fishs as $fish) {
+            $fish_name[$fish->id] = $fishing_rod_type->type;
+        }
+        return view ('sites.atlas')->with('fishs', $fish_name);
         }
         else
         {
@@ -46,12 +50,7 @@ class AtlasController extends Controller
      */
     public function create()
     {
-        $fishing_rods_types = FishingRodType::all();
-        $types_name = array();
-        foreach ($fishing_rods_types as $fishing_rod_type) {
-            $types_name[$fishing_rod_type->id] = $fishing_rod_type->type;
-        }
-        return view ('sites.atlas')->with('fishing_rods_types', $types_name);
+
     }
 
     /**
