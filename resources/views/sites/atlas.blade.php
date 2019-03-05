@@ -7,7 +7,7 @@ w którym znajdować się będą informacje zdefiniowane wcześniej w bazie dany
 - zdjęcie,<br>- informacje na temat gatunku,<br>- okres ochronny wraz z wymiarami ochronnymi.
 <br><br><h3>Atlas ryb</h3><br>
 
-    {!! Form::open(['action' => 'AtlasController@store', 'method'=>'POST'] ) !!}
+    {!! Form::open(['action' => 'AtlasController@store', 'method'=>'GET'] ) !!}
 
         <div class = "form-group"> 
             {{Form::label('type', 'Wybierz rybę:')}}       

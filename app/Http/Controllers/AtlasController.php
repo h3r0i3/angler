@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 use App\FishingRodType;
-use App\FishingRod;
+use App\Fishs;
 use App\User;
 
 class AtlasController extends Controller
@@ -30,10 +30,10 @@ class AtlasController extends Controller
     {
         if (Auth::check())
         {
-        $fishs = Fish::all();
+        $fishs = Fishs::all();
         $fish_name = array();
         foreach ($fishs as $fish) {
-            $fish_name[$fish->id] = $fishing_rod_type->type;
+            $fish_name[$fish->id] = $fish->name;
         }
         return view ('sites.atlas')->with('fishs', $fish_name);
         }
@@ -60,12 +60,7 @@ class AtlasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $this->validate($request, [
-            'type' => 'required', 
-            'length' => 'required',
-            'model' => 'required',
-        ]);            
+    {           
 
         $fishingRod = new FishingRod;
         $fishingRod->user_id = Auth::user()->id;

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fish extends Model
+class Fishs extends Model
 {
     public $timestamps = true;
 
